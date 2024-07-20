@@ -54,7 +54,8 @@ This project demonstrates the deployment of a static HTML web app on AWS using a
 The following Bash script was used to deploy the web application on an EC2 instance:
 
 ```bash
-#!/bin/bash
+# !/bin/bash
+
 # Switch to the root user to gain full administrative privileges
 sudo su
 
@@ -85,11 +86,5 @@ systemctl enable httpd
 # Start the Apache HTTP Server to serve web content
 systemctl start httpd
 ```
-
-## Reference Diagram and Scripts
-
-The reference diagram and scripts used for this deployment are available in the GitHub repository for this project. You can access them [here](https://github.com/aosnotes77/host-a-static-website-on-aws).
-
-## Conclusion
 
 By following the above steps, you can set up a secure, scalable, and reliable static website on AWS. This setup leverages various AWS services to ensure high availability and fault tolerance, making it an ideal solution for hosting static web applications.
