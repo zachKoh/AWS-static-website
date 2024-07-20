@@ -1,3 +1,5 @@
+![Alt text](/AWS-Static-Website-Reference-Architecture.png)
+
 # Host a Static Website on AWS
 
 This project demonstrates the deployment of a static HTML web app on AWS using a range of AWS services and infrastructure components to ensure security, scalability, and reliability. Below are the detailed steps and configurations used to achieve this.
