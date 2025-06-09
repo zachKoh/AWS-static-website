@@ -1,23 +1,23 @@
 trigger:
   branches:
     include:
-      - main  # or your target branch
+      - main
 
 pool:
   name: default
 
 variables:
-  S3_BUCKET_NAME: 'azuredevops-test1' # change the bucket name
-  SOURCE_DIR: '$(Build.SourcesDirectory)'  # can just change to your Angular build folder
+  S3_BUCKET_NAME: 'azuredevops-test1'
+  SOURCE_DIR: '$(Build.SourcesDirectory)'
 
 steps:
 - checkout: self
 
 - script: |
     pip install awscli
-    aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID
-    aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
-    aws s3 sync $SOURCE_DIR s3://$S3_BUCKET_NAME --delete
+    aws configure set aws_access_key_id %AWS_ACCESS_KEY_ID%
+    aws configure set aws_secret_access_key %AWS_SECRET_ACCESS_KEY%
+    aws s3 sync "%SOURCE_DIR%" "s3://%S3_BUCKET_NAME%" --delete
   env:
     AWS_ACCESS_KEY_ID: $(AWS_ACCESS_KEY_ID)
     AWS_SECRET_ACCESS_KEY: $(AWS_SECRET_ACCESS_KEY)
