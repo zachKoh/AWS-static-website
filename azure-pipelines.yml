@@ -11,10 +11,7 @@ variables:
   SOURCE_DIR: '$(Build.SourcesDirectory)'  # can just change to your Angular build folder
 
 steps:
-- task: NodeTool@0
-  inputs:
-    versionSpec: '18.x'
-  displayName: 'Install Node.js'
+- checkout: self
 
 - script: |
     pip install awscli
