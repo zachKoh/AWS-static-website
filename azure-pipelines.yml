@@ -4,7 +4,7 @@ trigger:
       - main  # or your target branch
 
 pool:
-  vmImage: 'ubuntu-latest'
+  name: default
 
 variables:
   S3_BUCKET_NAME: 'azuredevops-test1' # change the bucket name
